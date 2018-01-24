@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+	head
+		title="Underground Routes"
+		meta(charset="UTF-8")
+		meta(name="description", content="Underground Routes Guide for ND Climbing")
+		meta(name="keywords", content="Notre, Dame, Underground, Routes")
+		meta(name="author", content="R. C. Howell")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(href="https://fonts.googleapis.com/css?family=Crimson+Text|Open+Sans", rel="stylesheet")
+		link(href="stylesheets/style.css", rel="stylesheet")
+		script(type="text/javascript", src="bower_components/mustache.js/mustache.min.js")
+		script(type="text/javascript", src="scripts/main.js")
+	body
+		#header
+			h1 Underground Routes
+			a(href="https://github.com/rchowell/underground-routes", target="_blank") Github
+			a(href="./new.html") New Route
+		#content
+			script#template(type="x-tmpl-mustache")
+				.route
+					.route-header
+						h3 {{name}}
+						p &emsp;&mdash;&emsp;
+						p {{grade}}
+						p.setter Setter: {{setter}}
+					.route-img-container
+						img(src='{{image}}')
+					.route-footer
+						.button(onClick='deleteRoute(\'{{_id.$oid}}\')')
+							p DELETE
